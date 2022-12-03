@@ -1,22 +1,30 @@
 import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Playlist from "./pages/Playlist";
+import Search from "./pages/Search";
+
 
 function App() {
 	return (
-		<div className='App'>
-			<h1 className='text-6xl font-bold underline'>Hello world!</h1>
+    <>
+      <div className="App">
+        <h1 className="text-6xl font-bold underline">Hello world!</h1>
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="search">
+          <Route path="" element={<Search />} />
+          <Route path=":query" element={<Search />} />
+        </Route>
 
-			{/* 
-/ -> home page
-/search
-		/ -> search page
-		/:query -> search page w/ query
-/playlist
-		/ -> playlist page
-		/:id -> playlist page w/ playlist id
-
- */}
-		</div>
-	);
+        <Route path="playlist">
+          <Route path="" element={<Playlist />} />
+          <Route path=":id" element={<Playlist />} />
+        </Route>
+      </Routes>
+    </>
+  );
 }
 
 export default App;
