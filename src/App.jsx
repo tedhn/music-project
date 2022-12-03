@@ -13,8 +13,15 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="Search/:query" element={<Search />} />
-        <Route path="Playlist/:id" element={<Playlist/>} />
+        <Route path="search">
+          <Route path="" element={<Search />} />
+          <Route path=":query" element={<Search />} />
+        </Route>
+
+        <Route path="playlist">
+          <Route path="" element={<Playlist />} />
+          <Route path=":id" element={<Playlist />} />
+        </Route>
       </Routes>
     </>
   );
