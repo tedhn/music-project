@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./navBar/Navbar";
+import Navbar from "./Navbar";
 
 const BasePage = ({ children }) => {
   return (
