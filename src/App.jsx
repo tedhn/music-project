@@ -1,30 +1,18 @@
+//Library Imports
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home";
-import Playlist from "./pages/Playlist";
-import Search from "./pages/Search";
 
+// Component Imports
+import { Navbar, Player } from "./components";
+import RoutesList from "./Routes";
 
-function App() {
+const App = () => {
 	return (
-    <>
-      <div className="App">
-        <h1 className="text-6xl font-bold underline">Hello world!</h1>
-      </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="search">
-          <Route path="" element={<Search />} />
-          <Route path=":query" element={<Search />} />
-        </Route>
-
-        <Route path="playlist">
-          <Route path="" element={<Playlist />} />
-          <Route path=":id" element={<Playlist />} />
-        </Route>
-      </Routes>
-    </>
-  );
-}
+		<div className='grid w-screen h-screen grid-cols-12 grid-rows-6'>
+			<Navbar />
+			<RoutesList />
+			<Player />
+		</div>
+	);
+};
 
 export default App;
