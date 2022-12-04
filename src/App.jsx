@@ -6,13 +6,14 @@ import { Navbar, Player } from "./components";
 import RoutesList from "./Routes";
 
 const App = () => {
-	return (
-		<div className='grid w-screen h-screen grid-cols-12 grid-rows-6'>
-			<Navbar />
-			<RoutesList />
-			<Player />
-		</div>
-	);
+  return (
+    <div className="grid w-screen h-screen grid-cols-12 grid-rows-6">
+      <Navbar />
+
+      <RoutesList />
+      <Player />
+    </div>
+  );
 };
 
 export default App;
