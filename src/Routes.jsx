@@ -2,13 +2,14 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { BasePage } from "./components";
-import { Home, Search, Playlist } from "./pages";
+import { Home, Search, Playlist, Login } from "./pages";
 
 const RoutesList = () => {
 	return (
 		<BasePage>
 			<Routes>
-				<Route path='/' element={<Home />} />
+				<Route path='/login' element={<Login />} />
+				<Route path='/home' element={<Home />} />
 				<Route path='search'>
 					<Route path='' element={<Search />} />
 					<Route path=':query' element={<Search />} />
