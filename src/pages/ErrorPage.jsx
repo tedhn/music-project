@@ -4,17 +4,17 @@ import { AiFillHome } from "react-icons/ai";
 
 const ErrorPage = () => {
   return (
-    <div className=" flex flex-col justify-center">
-      <div className="flex justify-center text-white container mx-auto mt-60">
+    <div className="flex flex-col justify-center ">
+      <div className="container flex justify-center mx-auto text-white mt-60">
         <div className="text-center ">
-          <p className="md:text-4xl sm:text-2xl text-lg font-bold">Oops!</p>
-          <h1 className="md:text-5xl sm:text-4xl text-xl font-bold mt-2">
+          <p className="text-lg font-bold md:text-4xl sm:text-2xl">Oops!</p>
+          <h1 className="mt-2 text-xl font-bold md:text-5xl sm:text-4xl">
             You've traveled quit far !!
           </h1>
 
           <Link
             to="/"
-            className="flex justify-center md:text-base text-sm font-semibold items-center gap-2 mt-6 border mx-auto p-2 hover:bg-white hover:text-black transition-all ease-linear duration-300 w-60"
+            className="flex items-center justify-center gap-2 p-2 mx-auto mt-6 text-sm font-semibold transition-all duration-300 ease-linear border md:text-base hover:bg-gray hover:text-gold w-60"
           >
             LET'S GO HOME <AiFillHome size={20} />
           </Link>
