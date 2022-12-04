@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 
-import ErrorPage from "./pages/ErrorPage";
 import { BasePage } from "./components";
-import { Home, Search, Playlist, Login } from "./pages";
+import { Home, Search, Playlist, Login, Error } from "./pages";
+import { getMyData } from "./api";
+import { UserContext } from "./context/UserContext";
 
 const RoutesList = () => {
+	const { updateUser } = useContext(UserContext);
+
+	useEffect(() => {
+		handleOnLoad();
+	}, []);
+
+	const handleOnLoad = async () => {
+		const { data } = await getMyData();
+
+		updateUser(data);
+	};
+
 	return (
 		<BasePage>
 			<Routes>
@@ -20,7 +34,7 @@ const RoutesList = () => {
 					<Route path='' element={<Playlist />} />
 					<Route path=':id' element={<Playlist />} />
 				</Route>
-				<Route path='*' element={<ErrorPage />} />
+				<Route path='*' element={<Error />} />
 			</Routes>
 		</BasePage>
 	);

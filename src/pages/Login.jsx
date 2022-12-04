@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { login } from "@/api";
+import { loginAccount } from "@/api";
 
 const Login = ({ setAuthorized }) => {
 	const {
@@ -22,7 +22,7 @@ const Login = ({ setAuthorized }) => {
 
 		if (code !== undefined) {
 			try {
-				login(code).then(({ data }) => {
+				loginAccount(code).then(() => {
 					setAuthorized(true);
 					navigate("/");
 				});
