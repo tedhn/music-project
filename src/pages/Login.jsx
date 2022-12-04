@@ -24,7 +24,7 @@ const Login = ({ setAuthorized }) => {
 			try {
 				login(code).then(({ data }) => {
 					setAuthorized(true);
-					navigate("home");
+					navigate("/");
 				});
 			} catch (e) {
 				console.log(e);
