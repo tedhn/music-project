@@ -7,6 +7,6 @@ import path from "path";
 export default defineConfig( {
   plugins: [ react(), EnvironmentPlugin( "all" ) ],
   resolve: {
-    alias: [ { find: "@", replacement: path.resolve( __dirname, "./src" ) } ],
+    alias: [ { find: "@", replacement: path.resolve( __dirname, "src" ) } ],
   },
 } )
