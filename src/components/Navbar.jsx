@@ -1,5 +1,5 @@
 import React from "react";
-import { BsEmojiSmileFill, BsPlusCircle, BsSearch } from "react-icons/bs";
+import { BsPlusCircle, BsSearch } from "react-icons/bs";
 import { RiBankLine } from "react-icons/ri";
 import { HiOutlineQueueList } from "react-icons/hi2";
 import { Link } from "react-router-dom";
