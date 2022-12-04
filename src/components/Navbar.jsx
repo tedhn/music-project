@@ -9,70 +9,66 @@ const Navbar = () => {
 
   return (
     <div className="col-span-2 row-span-5 shadow-lg bg-dark">
-      <div className="w-full h-full flex flex-col md:gap-10 sm:gap-8 gap-4 items-center p-4">
-        <div>
-          <BsEmojiSmileFill size={100} />
-        </div>
-
-        <div className="flex w-3/4 flex-col gap-6">
+      <div className="flex flex-col items-center w-full h-full gap-4 p-4 pt-6 border md:gap-10 sm:gap-8">
+        <div className="flex flex-col w-4/5 gap-2 ">
           <Link
             to="/"
-            className="flex gap-4 items-center font-medium md:text-base text-sm hover:bg-gray hover:text-gold py-2 px-4 rounded-2xl"
+            className="flex items-center gap-4 px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md md:text-base hover:bg-gray hover:text-gold"
           >
             <RiBankLine size={22} /> Library
           </Link>
           <Link
             to="/search"
-            className="flex gap-4 items-center font-medium md:text-base text-sm hover:bg-gray hover:text-gold py-2 px-4 rounded-2xl"
+            className="flex items-center gap-4 px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md md:text-base hover:bg-gray hover:text-gold"
           >
             <BsSearch size={22} /> Search
           </Link>
           <Link
             to="/playlist"
-            className="flex gap-4 items-center font-medium md:text-base text-sm hover:bg-gray hover:text-gold py-2 px-4 rounded-2xl"
+            className="flex items-center gap-4 px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md md:text-base hover:bg-gray hover:text-gold"
           >
             <HiOutlineQueueList size={22} /> My Playlists
           </Link>
         </div>
 
-        <Link className="flex w-3/4 gap-4 items-center font-medium md:text-base text-sm hover:bg-gray hover:text-gold py-2 px-4 rounded-2xl">
+        <Link className="flex items-center w-4/5 gap-4 px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md md:text-base hover:bg-gray hover:text-gold">
           <BsPlusCircle size={20} /> Create Playlist
         </Link>
 
-        <div className="w-3/4 flex flex-col gap-3">
+        <div className="flex flex-col w-4/5 gap-2 overflow-auto">
           <Link
             to="/playlist/id"
-            className="font-medium md:text-base text-sm hover:bg-gray hover:text-gold py-2 px-4 rounded-2xl"
+            className="px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md md:text-base hover:bg-gray hover:text-gold"
           >
             Playlist Name
           </Link>
           <Link
             to="/playlist/id"
-            className="font-medium md:text-base text-sm hover:bg-gray hover:text-gold py-2 px-4 rounded-2xl"
+            className="px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md md:text-base hover:bg-gray hover:text-gold"
           >
             Playlist Name
           </Link>
           <Link
             to="/playlist/id"
-            className="font-medium md:text-base text-sm hover:bg-gray hover:text-gold py-2 px-4 rounded-2xl"
+            className="px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md md:text-base hover:bg-gray hover:text-gold"
           >
             Playlist Name
           </Link>
           <Link
             to="/playlist/id"
-            className="font-medium md:text-base text-sm hover:bg-gray hover:text-gold py-2 px-4 rounded-2xl"
+            className="px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md md:text-base hover:bg-gray hover:text-gold"
           >
             Playlist Name
           </Link>
           <Link
             to="/playlist/id"
-            className="font-medium md:text-base text-sm hover:bg-gray hover:text-gold py-2 px-4 rounded-2xl"
+            className="px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md md:text-base hover:bg-gray hover:text-gold"
           >
             Playlist Name
           </Link>
           <Link
             to="/playlist/id"
-            className="font-medium md:text-base text-sm hover:bg-gray hover:text-gold py-2 px-4 rounded-2xl"
+            className="px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md md:text-base hover:bg-gray hover:text-gold"
           >
             Playlist Name
           </Link>
