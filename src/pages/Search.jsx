@@ -1,7 +1,6 @@
 import React from "react";
 
-import ListItem from "@/components/ListItem";
-import Card from "@/components/Card";
+import { ListItem, Card } from "@/components";
 
 const Search = () => {
 	return (
