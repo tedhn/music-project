@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ListItem = () => {
 	return (
 		// listSection
-		<div className='hover:rounded-lg  w-11/12 h-16 px-8 py-8 flex flex-row  items-center gap-20 bg-gray hover:bg-offwhite text-white hover:text-gold'>
+		<div className='hover:rounded-lg border justify-between w-full h-16 px-8 py-8 flex flex-row  items-center  bg-gray hover:bg-offwhite text-white hover:text-gold'>
 			{/* listItemLeft */}
 			<div className='flex flex-row justify-center items-center gap-8'>
 				<p>1</p>
@@ -14,13 +14,13 @@ const ListItem = () => {
 					// singerPic
 					className='w-10 h-10'
 				/>
-				<div>
+				<div className="grow">
 					<p>Song Title</p>
 					<small>Artist Title</small>
 				</div>
 			</div>
 			{/* listItemData */}
-			<div className='flex flex-row items-center justify-evenly gap-32'>
+			<div className='flex flex-row items-center justify-around gap-8'>
 				<p>Album Name</p>
 				<p>Date Added</p>
 				<p>Duration</p>

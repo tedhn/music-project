@@ -2,7 +2,7 @@ import React from "react";
 
 function Card() {
 	return (
-		<div className='p-2 w-32 h-44 flex flex-col items-center justify-evenly bg-dark hover:bg-offwhite/20 text-white hover:text-gray  rounded-md'>
+		<div className='p-2 w-32 h-44 mt-4 flex flex-col items-center justify-evenly bg-dark hover:bg-offwhite/20 text-white hover:text-gray  rounded-md'>
 			<div className='w-20 h-20 mb-2'>
 				<img
 					src='https://preview.redd.it/m2g632yc33171.jpg?width=640&crop=smart&auto=webp&s=4d766d90b83b2b97d5d874bcf01d86bbabc8131c'

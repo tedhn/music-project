@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 const BasePage = ({ children }) => {
   return (
-    <div className="col-start-3 col-end-13 row-span-5 bg-gray">{children}</div>
+    <div className="col-start-3 col-end-13 row-span-5 bg-gray p-4">{children}</div>
   );
 };
 
