@@ -24,3 +24,13 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.custom-scrollbars__content {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.custom-scrollbars__content::-webkit-scrollbar {
+  display: none;
+}
