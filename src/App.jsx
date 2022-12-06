@@ -10,7 +10,7 @@ const App = () => {
 	const [authorized, setAuthorized] = useState(false);
 
 	return (
-		<div className='grid w-screen h-screen grid-cols-12 grid-rows-6 bg-dark'>
+		<div className='grid grid-cols-12 bg-dark'>
 			{authorized ? (
 				<>
 					<Navbar />
