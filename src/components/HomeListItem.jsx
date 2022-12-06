@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import "./listItem.css";
-const ListItem = ({
-  index,
+// ListItem({ songtitle,artistName,albumName,dateAdded,duration,album.track.images};
+const HomeListItem = ({
   albumImage,
   trackNumber,
   songtitle,
@@ -16,10 +16,10 @@ const ListItem = ({
     <div className="hover:rounded-lg  w-11/12 h-16 px-8 py-8 flex flex-row  items-center gap-20 bg-gray hover:bg-offwhite text-white hover:text-gold">
       {/* listItemLeft */}
       <div className="flex flex-row justify-center items-center gap-8">
-        <p>1</p>
+        <p>{trackNumber}</p>
         <img
           src={albumImage}
-          alt="artist"
+          alt={artistName}
           // singerPic
           className="w-10 h-10"
         />
@@ -33,10 +33,10 @@ const ListItem = ({
         <p>{albumName}</p>
         <p>{dateAdded}</p>
         <p>Duration</p>
-        <p>{duration}</p>
+        <p>... {duration}</p>
       </div>
     </div>
   );
 };
 
-export default ListItem;
+export default HomeListItem;
