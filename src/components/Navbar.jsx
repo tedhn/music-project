@@ -26,7 +26,9 @@ const Navbar = () => {
 	// console.count("1");
 
 	return (
-		<div className='col-span-2 row-span-5 shadow-lg bg-dark'>
+		<div
+			className='col-span-2 row-span-5 shadow-lg bg-dark sticky top-0'
+			style={{ height: "90vh" }}>
 			<div className='flex flex-col items-center w-full h-full gap-4 p-4 pt-6 md:gap-10 sm:gap-8'>
 				<div className='flex flex-col w-4/5 gap-2 '>
 					<Link
