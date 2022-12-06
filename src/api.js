@@ -22,3 +22,14 @@ export const handleSearch = async (searchData) => {
   return data.data;
   // return console.log("search", data);
 };
+//savedSongs
+export const getSavedSongs = async () => {
+  const datas = await axios.post("http://localhost:3001/savedTracks", {
+    offset: 0,
+  });
+  // console.log(datas.data);
+  console.log("Hello", datas.data);
+
+  return datas.data;
+  // setTrack(datas.data.items[index].track);
+};
