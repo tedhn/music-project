@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { getPlaylistData } from "@/api";
+import { getPlaylistTracks } from "@/api";
 const Playlist = () => {
   //console.log("aaaaaaa");
   const param = useParams();
   console.log(param);
-  const [data, setData] = useState("data");
+  const [data, setData] = useState();
   useEffect(() => {
-    getPlaylistData(param.id).then((data) => {
+    getPlaylistTracks(param.id).then((data) => {
       console.log(data);
-      setData("data");
+      setData(data);
     });
   }, []);
   console.log(data);
@@ -29,7 +29,7 @@ const Playlist = () => {
           <li>Total songs</li>
         </ul>
       </div>
-      {/* {data.map((data, index) => (
+      {data.map((data, index) => (
         <ListItem
           key={data.id}
           index={index + 1}
@@ -38,7 +38,7 @@ const Playlist = () => {
           albumName={data.track.album.name}
           img={data.track.album.images[0].url}
         />
-      ))} */}
+      ))}
     </div>
   );
 };

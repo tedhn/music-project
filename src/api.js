@@ -21,10 +21,10 @@ export const getPlaylistData = async (playlistId) => {
  return data
 };
 
-export const getPlaylistTracks = async () => {
-  const data = await axios.get("http://localhost:3001/getPlaylistTracks", {
+export const getPlaylistTracks = async (playlistId) => {
+  const data = await axios.post("http://localhost:3001/getPlaylistTracks", {
     playlistId,
     offset: 0,
   });
-  return data
+  return data.data.tracks;
 };
