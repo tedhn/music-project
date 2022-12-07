@@ -18,7 +18,7 @@ export const getPlaylistData = async (playlistId) => {
   const data = await axios.post("http://localhost:3001/getPlaylistData", {
     playlistId
   });
-  console.log(data)
+ return data
 };
 
 export const getPlaylistTracks = async () => {
@@ -26,4 +26,5 @@ export const getPlaylistTracks = async () => {
     playlistId,
     offset: 0,
   });
+  return data
 };
