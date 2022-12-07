@@ -14,3 +14,16 @@ export const getPlaylist = async () => {
   const data = await axios.get("http://localhost:3001/playlist");
   return data.data.items;
 };
+export const getPlaylistData = async (playlistId) => {
+  const data = await axios.post("http://localhost:3001/getPlaylistData", {
+    playlistId
+  });
+  console.log(data)
+};
+
+export const getPlaylistTracks = async () => {
+  const data = await axios.get("http://localhost:3001/getPlaylistTracks", {
+    playlistId,
+    offset: 0,
+  });
+};
