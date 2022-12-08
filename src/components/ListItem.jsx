@@ -1,6 +1,8 @@
 import React from "react";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 import { removeFromMySavedTracks, savedTracks } from "@/api";
+import { useState } from "react";
 
 const ListItem = ({
   songName,
@@ -13,6 +15,8 @@ const ListItem = ({
   trackId,
   isSave,
 }) => {
+  const [isLike, setIsLike] = useState(isSave);
+
   function dura(milliseconds) {
     let seconds = Math.floor(milliseconds / 1000);
     let minutes = Math.floor(seconds / 60);
@@ -22,13 +26,16 @@ const ListItem = ({
     return `${minutes}:${seconds}`;
   }
 
-  const removeAdd = async () => {
-    if (isSave) {
+  const removeAdd = () => {
+    console.log("asdfdsaf", isSave);
+    if (isLike) {
       console.log("remove");
-      await removeFromMySavedTracks(trackId);
+      setIsLike(false);
+      removeFromMySavedTracks(trackId);
     } else {
       console.log("added");
-      await savedTracks(trackId);
+      setIsLike(true);
+      savedTracks(trackId);
     }
   };
 
@@ -56,7 +63,11 @@ const ListItem = ({
       <p className="text-center">{releasedDate}</p>
       <p className="text-center">{dura(duration)}</p>
       <p className="text-center" onClick={removeAdd}>
-        ...
+        {isLike ? (
+          <AiFillHeart color={"#FFD369"} />
+        ) : (
+          <AiOutlineHeart color={"#FFD369"} />
+        )}
       </p>
     </div>
   );

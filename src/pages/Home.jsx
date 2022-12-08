@@ -10,6 +10,8 @@ const Home = () => {
     getSavedSongs().then((res) => setSongs(res.items));
   }, []);
 
+  console.log(songs);
+
   return (
     <div className="w-full">
       <h1>My Libaray</h1>
@@ -24,7 +26,7 @@ const Home = () => {
         <ListItem
           key={song.id}
           index={index + 1}
-          trackId={song.id}
+          trackId={song.track.id}
           songName={song.track.name}
           artistName={song.track.artists[0].name}
           albumName={song.track.album.name}

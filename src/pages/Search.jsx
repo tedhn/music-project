@@ -23,13 +23,13 @@ const Search = () => {
   const searchPlayers = async () => {
     const { playlists, tracks } = await handleSearch(searchData);
 
-    setPlaylists(playlists.items);
-    setTracks(tracks.items);
-
     const id = tracks.items.map((item) => item.id);
     console.log(id);
 
     const trackId = await checkTracks(id);
+
+    setPlaylists(playlists.items);
+    setTracks(tracks.items);
     setIsSaveList(trackId);
   };
 
