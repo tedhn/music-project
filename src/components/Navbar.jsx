@@ -5,21 +5,19 @@ import { HiOutlineQueueList } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { getPlaylist } from "@/api";
-import { useState } from "react";
 import { UserContext } from "@/context/UserContext";
 
-const Navbar = () => {
-	const { user } = useContext(UserContext);
-
-	const [playlists, setPlaylists] = useState([]);
+const Navbar = ({ setShowModal }) => {
+	const { user, playlists, updatePlaylists } = useContext(UserContext);
 
 	useEffect(() => {
+		console.count("aaaaaaaa");
 		playListDataGet();
 	}, [user]);
 
 	const playListDataGet = async () => {
 		const playlistData = await getPlaylist();
-		setPlaylists(playlistData);
+		updatePlaylists(playlistData);
 		// console.log(playlistData);
 	};
 
@@ -27,7 +25,7 @@ const Navbar = () => {
 
 	return (
 		<div
-			className='col-span-2 row-span-5 shadow-lg bg-dark sticky top-0'
+			className='fixed top-0 col-span-2 row-span-5 shadow-lg bg-dark'
 			style={{ height: "90vh" }}>
 			<div className='flex flex-col items-center w-full h-full gap-4 p-4 pt-6 md:gap-10 sm:gap-8'>
 				<div className='flex flex-col w-4/5 gap-2 '>
@@ -48,9 +46,11 @@ const Navbar = () => {
 					</Link>
 				</div>
 
-				<Link className='flex items-center w-4/5 gap-4 px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md md:text-base hover:bg-gray hover:text-gold'>
+				<div
+					onClick={() => setShowModal(true)}
+					className='flex items-center w-4/5 gap-4 px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md cursor-pointer md:text-base hover:bg-gray hover:text-gold'>
 					<BsPlusCircle size={20} /> Create Playlist
-				</Link>
+				</div>
 
 				{/* playList names */}
 				<div className='flex flex-col w-4/5 gap-2 overflow-auto'>
@@ -58,7 +58,7 @@ const Navbar = () => {
 						<Link
 							key={playlist.id}
 							to={`/playlist/${playlist.id}`}
-							className='px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md md:text-base hover:bg-gray hover:text-gold'>
+							className='px-4 overflow-hidden text-sm font-medium transition-all duration-300 ease-linear rounded-md whitespace-nowrap text-ellipsis md:text-base hover:bg-gray hover:text-gold'>
 							{playlist.name}
 						</Link>
 					))}

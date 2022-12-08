@@ -14,7 +14,7 @@ const Playlist = () => {
 
 	useEffect(() => {
 		onload();
-	}, []);
+	}, [param]);
 
 	const onload = async () => {
 		const tracks = await getPlaylistTracks(param.id);
@@ -29,15 +29,21 @@ const Playlist = () => {
 	return (
 		<>
 			{isLoading ? (
-				<div>LOADING</div>
+				<div className='w-full text-center'>LOADING</div>
 			) : (
 				<>
-					<div className=' flex gap-5'>
+					<div className='flex gap-5 '>
 						<div className='w-40 h-40 drop-shadow-xl'>
-							<img src={playlistInfo?.images[0].url} alt={"404"} />
+							{playlistInfo.images.length !== 0 ? (
+								<img src={playlistInfo.images[0]?.url} alt={"404"} />
+							) : (
+								<div className='flex items-center justify-center w-full h-full bg-dark text-7xl'>
+									{playlistInfo.name.split("")[0]}
+								</div>
+							)}
 						</div>
 						<div>
-							<h1 className='font-bold text-7xl leading-normal text-white'>
+							<h1 className='font-bold leading-normal text-white text-7xl'>
 								{playlistInfo.name}
 							</h1>
 							<ul className='flex gap-3'>
@@ -46,20 +52,28 @@ const Playlist = () => {
 							</ul>
 						</div>
 					</div>
-					<div className='mt-4'>
-						{tracks.map((data, index) => (
-							<ListItem
-								key={data.id}
-								index={index + 1}
-								songName={data.track.name}
-								artistName={data.track.artists[0].name}
-								albumName={data.track.album.name}
-								releasedDate={data.track.album.release_date}
-								duration={data.track.duration_ms}
-								img={data.track.album.images[0].url}
-							/>
-						))}
-					</div>
+					{tracks.length === 0 ? (
+						<div className='w-full text-center translate-y-20'>
+							Start adding songs !
+						</div>
+					) : (
+						<>
+							<div className='mt-4'>
+								{tracks.map((data, index) => (
+									<ListItem
+										key={data.id}
+										index={index + 1}
+										songName={data.track.name}
+										artistName={data.track.artists[0].name}
+										albumName={data.track.album.name}
+										releasedDate={data.track.album.release_date}
+										duration={data.track.duration_ms}
+										img={data.track.album.images[0].url}
+									/>
+								))}
+							</div>
+						</>
+					)}
 				</>
 			)}
 		</>
