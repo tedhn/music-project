@@ -58,7 +58,7 @@ const Navbar = () => {
           {playlists.map((playlist) => (
             <Link
               key={playlist.id}
-              to={`/playlist/${playlist.id}`}
+              to={`/playlist/3cSpNwEM2C4GMrggDLSDhD`}
               className="px-4 py-2 text-sm font-medium transition-all duration-300 ease-linear rounded-md md:text-base hover:bg-gray hover:text-gold"
             >
               {playlist.name}
