@@ -51,9 +51,11 @@ const Playlist = () => {
 							<ListItem
 								key={data.id}
 								index={index + 1}
-								SongName={data.track.name}
+								songName={data.track.name}
 								artistName={data.track.artists[0].name}
 								albumName={data.track.album.name}
+								releasedDate={data.track.album.release_date}
+								duration={data.track.duration_ms}
 								img={data.track.album.images[0].url}
 							/>
 						))}
