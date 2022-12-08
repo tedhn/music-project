@@ -3,7 +3,7 @@ import React from "react";
 const Player = () => {
 	return (
 		<div
-			className='col-span-12 shadow-2xl shadow-black bg-dark sticky bottom-0'
+			className='fixed bottom-0 w-full shadow-2xl shadow-black bg-dark'
 			style={{ height: "10vh" }}>
 			Player
 		</div>

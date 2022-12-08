@@ -40,12 +40,18 @@ export const getPlaylistTracks = async ( playlistId ) => {
 };
 //savedSongs
 export const getSavedSongs = async () => {
-  const datas = await axios.post("http://localhost:3001/savedTracks", {
+  const datas = await axios.post( "http://localhost:3001/savedTracks", {
     offset: 0,
-  });
+  } );
   // console.log(datas.data);
-  console.log("Hello", datas.data);
+  console.log( "Hello", datas.data );
 
   return datas.data;
   // setTrack(datas.data.items[index].track);
 };
+
+export const createPlaylist = async ( playlistName, otherDeatils ) => {
+  const { data } = await axios.post( 'http://localhost:3001/createPlaylist', { playlistName, otherDetails: {} } )
+
+  return data.body
+}
