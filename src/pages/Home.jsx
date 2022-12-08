@@ -1,19 +1,14 @@
 import React from "react";
+import { useEffect, useState } from "react";
 
 import { ListItem } from "@/components";
-import { useEffect, useState } from "react";
 import { getSavedSongs } from "@/api";
-import { data } from "autoprefixer";
 
 const Home = () => {
 	const [songs, setSongs] = useState([]);
-	const [offset, setOffset] = useState(0);
 	useEffect(() => {
 		getSavedSongs().then((res) => setSongs(res.items));
 	}, []);
-
-	function showSongs() {}
-	console.log(songs);
 
 	return (
 		<div className='w-full'>

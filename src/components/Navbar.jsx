@@ -18,10 +18,7 @@ const Navbar = ({ setShowModal }) => {
 	const playListDataGet = async () => {
 		const playlistData = await getPlaylist();
 		updatePlaylists(playlistData);
-		// console.log(playlistData);
 	};
-
-	// console.count("1");
 
 	return (
 		<div

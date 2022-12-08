@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getPlaylistData, getPlaylistTracks } from "@/api";
 import { ListItem } from "@/components";
-// import InfiniteScroll from "react-infinite-scroll-component";
+
 const Playlist = () => {
 	const param = useParams();
 
@@ -21,7 +21,6 @@ const Playlist = () => {
 		const playlistInfo = await getPlaylistData(param.id);
 
 		setTracks(tracks);
-		console.log(playlistInfo);
 		setPlaylistInfo(playlistInfo);
 		setIsLoading(false);
 	};

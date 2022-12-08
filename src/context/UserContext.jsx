@@ -7,7 +7,6 @@ const UserContextProvider = ({ children }) => {
 	const [playlists, setPlaylists] = useState([]);
 
 	const updateUser = (newUser) => {
-		console.log("updating user");
 		setUser(newUser);
 	};
 
