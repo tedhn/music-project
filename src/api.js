@@ -38,3 +38,14 @@ export const getPlaylistTracks = async ( playlistId ) => {
   } );
   return data.data.tracks;
 };
+//savedSongs
+export const getSavedSongs = async () => {
+  const datas = await axios.post("http://localhost:3001/savedTracks", {
+    offset: 0,
+  });
+  // console.log(datas.data);
+  console.log("Hello", datas.data);
+
+  return datas.data;
+  // setTrack(datas.data.items[index].track);
+};

@@ -1,19 +1,44 @@
 import React from "react";
+
 import { ListItem } from "@/components";
+import { useEffect, useState } from "react";
+import { getSavedSongs } from "@/api";
+import { data } from "autoprefixer";
 
 const Home = () => {
-	return (
-		<div className='w-full'>
-			<h1>My Libaray</h1>
-			<div className='flex flex-row items-center w-11/12 h-16 gap-64 px-8 py-8 ml-8 text-white bg-gray'>
-				<p># Title</p>
-				<p>Album</p>
-				<p>Date Added</p>
-				<p>Duration</p>
-			</div>
-			<ListItem />
-		</div>
-	);
+  const [songs, setSongs] = useState([]);
+  const [offset, setOffset] = useState(0);
+  useEffect(() => {
+    getSavedSongs().then((res) => setSongs(res.items));
+  }, []);
+
+  function showSongs() {}
+  console.log(songs);
+
+  return (
+    <div className="w-full">
+      <h1>My Libaray</h1>
+      <div className="flex flex-row items-center w-11/12 h-16 gap-64 px-8 py-8 ml-8 text-white bg-gray">
+        <p># Title</p>
+        <p>Album Name </p>
+        <p>Date Added </p>
+        <p>Duration </p>
+      </div>
+
+      {songs.map((song, index) => (
+        <ListItem
+          key={song.id}
+          index={index + 1}
+          songName={song.track.name}
+          artistName={song.track.artists[0].name}
+          albumName={song.track.album.name}
+          releasedDate={song.track.album.release_date}
+          duration={song.track.duration_ms}
+          img={song.track.album.images[0].url}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default Home;
