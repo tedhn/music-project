@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getPlaylistData, getPlaylistTracks } from "@/api";
 import { ListItem } from "@/components";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Playlist = () => {
 	const param = useParams();
@@ -10,6 +11,7 @@ const Playlist = () => {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const [tracks, setTracks] = useState([]);
+	const [total, setTotal] = useState(0);
 	const [playlistInfo, setPlaylistInfo] = useState(undefined);
 
 	useEffect(() => {
@@ -17,14 +19,22 @@ const Playlist = () => {
 	}, [param]);
 
 	const onload = async () => {
-		const tracks = await getPlaylistTracks(param.id);
+		const tracks = await fetchSongs();
 		const playlistInfo = await getPlaylistData(param.id);
 
+		setTotal(playlistInfo.tracks.total);
 		setTracks(tracks);
 		setPlaylistInfo(playlistInfo);
 		setIsLoading(false);
 	};
 
+	const fetchSongs = async () => {
+		const res = await getPlaylistTracks(param.id, tracks.length);
+
+		setTracks([...tracks, ...res]);
+
+		return res;
+	};
 	return (
 		<>
 			{isLoading ? (
@@ -56,22 +66,25 @@ const Playlist = () => {
 							Start adding songs !
 						</div>
 					) : (
-						<>
-							<div className='mt-4'>
-								{tracks.map((data, index) => (
-									<ListItem
-										key={data.id}
-										index={index + 1}
-										songName={data.track.name}
-										artistName={data.track.artists[0].name}
-										albumName={data.track.album.name}
-										releasedDate={data.track.album.release_date}
-										duration={data.track.duration_ms}
-										img={data.track.album.images[0].url}
-									/>
-								))}
-							</div>
-						</>
+						<InfiniteScroll
+							dataLength={tracks.length}
+							next={fetchSongs}
+							hasMore={tracks.length < total}
+							loader={<h4>Loading...</h4>}
+							className='mt-4 p-6'>
+							{tracks.map((data, index) => (
+								<ListItem
+									key={data.id}
+									index={index + 1}
+									songName={data.track.name}
+									artistName={data.track.artists[0].name}
+									albumName={data.track.album.name}
+									releasedDate={data.track.album.release_date}
+									duration={data.track.duration_ms}
+									img={data.track.album.images[0].url}
+								/>
+							))}
+						</InfiniteScroll>
 					)}
 				</>
 			)}

@@ -12,13 +12,13 @@ const App = () => {
 	const [isShowModal, setShowModal] = useState(false);
 
 	return (
-		<div className='grid grid-cols-12 bg-dark'>
+		<div className='grid grid-cols-12'>
 			{authorized ? (
 				<>
 					{isShowModal && <Modal setShowModal={setShowModal} />}
 					<Navbar setShowModal={setShowModal} />
 					<RoutesList />
-					<Player />
+					{/* <Player /> */}
 				</>
 			) : (
 				<Login setAuthorized={setAuthorized} />

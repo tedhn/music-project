@@ -31,7 +31,7 @@ const ListItem = ({
 					className='w-10 h-10'
 				/>
 			</div>
-			<div className='col-span-5 mx-4'>
+			<div className='col-span-4 mx-4 text-ellipsis whitespace-nowrap overflow-hidden w-[300px]'>
 				<p>{songName}</p>
 				<small>{artistName}</small>
 			</div>
@@ -42,6 +42,7 @@ const ListItem = ({
 			<p className='text-center'>{releasedDate}</p>
 			<p className='text-center'>{dura(duration)}</p>
 			<p className='text-center'>...</p>
+			<p className='text-center'>A</p>
 		</div>
 	);
 };
