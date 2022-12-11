@@ -15,15 +15,17 @@ const Playlist = () => {
 	const [playlistInfo, setPlaylistInfo] = useState(undefined);
 
 	useEffect(() => {
+		setTracks([]);
+		setTotal(0);
 		onload();
 	}, [param]);
 
 	const onload = async () => {
-		const tracks = await fetchSongs();
+		const res = await getPlaylistTracks(param.id, 0);
 		const playlistInfo = await getPlaylistData(param.id);
 
 		setTotal(playlistInfo.tracks.total);
-		setTracks(tracks);
+		setTracks(res);
 		setPlaylistInfo(playlistInfo);
 		setIsLoading(false);
 	};
@@ -82,6 +84,7 @@ const Playlist = () => {
 									releasedDate={data.track.album.release_date}
 									duration={data.track.duration_ms}
 									img={data.track.album.images[0].url}
+									songURI={data.track.uri}
 								/>
 							))}
 						</InfiniteScroll>

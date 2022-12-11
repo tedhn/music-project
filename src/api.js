@@ -52,3 +52,9 @@ export const createPlaylist = async ( playlistName, otherDeatils ) => {
 
   return data.body
 }
+
+export const addToPlaylist = async ( playlistId, songId ) => {
+  axios.post( 'http://localhost:3001/addToPlaylist', { playlistId, song: songId } )
+
+
+}

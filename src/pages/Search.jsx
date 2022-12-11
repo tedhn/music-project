@@ -48,6 +48,7 @@ const Search = () => {
 						releasedDate={track.album.release_date}
 						duration={track.duration_ms}
 						img={track.album.images[0].url}
+						songURI={track.uri}
 					/>
 				))}
 			</div>

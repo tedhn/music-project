@@ -1,4 +1,5 @@
 import React from "react";
+import { DropDown } from ".";
 
 const ListItem = ({
 	songName,
@@ -8,6 +9,7 @@ const ListItem = ({
 	duration,
 	img,
 	index,
+	songURI,
 }) => {
 	function dura(milliseconds) {
 		let seconds = Math.floor(milliseconds / 1000);
@@ -42,7 +44,9 @@ const ListItem = ({
 			<p className='text-center'>{releasedDate}</p>
 			<p className='text-center'>{dura(duration)}</p>
 			<p className='text-center'>...</p>
-			<p className='text-center'>A</p>
+			<p className='text-center'>
+				<DropDown songURI={songURI} />
+			</p>
 		</div>
 	);
 };
