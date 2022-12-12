@@ -11,7 +11,6 @@ const Navbar = ({ setShowModal }) => {
 	const { user, playlists, updatePlaylists } = useContext(UserContext);
 
 	useEffect(() => {
-		console.count("aaaaaaaa");
 		playListDataGet();
 	}, [user]);
 

@@ -40,6 +40,7 @@ const Home = () => {
 						releasedDate={song.track.album.release_date}
 						duration={song.track.duration_ms}
 						img={song.track.album.images[0].url}
+						isSave={true}
 						songURI={song.track.uri}
 					/>
 				))}

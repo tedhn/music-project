@@ -20,35 +20,36 @@ export const handleSearch = async ( searchData ) => {
     q: searchData,
   } );
   return data.data;
-
-}
+};
 export const getPlaylistData = async ( playlistId ) => {
   const data = await axios.post( "http://localhost:3001/getPlaylistData", {
-    playlistId
+    playlistId,
   } );
 
-
-  return data.data
+  return data.data;
 };
 
-export const getPlaylistTracks = async ( playlistId, offset ) => {
+export const getPlaylistTracks = async ( playlistId ) => {
   const data = await axios.post( "http://localhost:3001/getPlaylistTracks", {
     playlistId,
-    offset,
+    offset: 0,
   } );
   return data.data.tracks;
 };
 //savedSongs
-export const getSavedSongs = async ( offset ) => {
+export const getSavedSongs = async () => {
   const datas = await axios.post( "http://localhost:3001/savedTracks", {
-    offset,
+    offset: 0,
   } );
 
   return datas.data;
 };
 
 export const createPlaylist = async ( playlistName, otherDeatils ) => {
-  const { data } = await axios.post( 'http://localhost:3001/createPlaylist', { playlistName, otherDetails: {} } )
+  const { data } = await axios.post( "http://localhost:3001/createPlaylist", {
+    playlistName,
+    otherDetails: {},
+  } );
 
   return data.body
 }
@@ -57,4 +58,30 @@ export const addToPlaylist = async ( playlistId, songId ) => {
   axios.post( 'http://localhost:3001/addToPlaylist', { playlistId, song: songId } )
 
 
-}
+
+  return data.body;
+};
+
+export const savedTracks = async ( trackId ) => {
+  const data = await axios.post( "http://localhost:3001/addToMySavedTracks", {
+    id: trackId,
+  } );
+  console.log( "savedata", data );
+};
+
+export const checkTracks = async ( trackId ) => {
+  const data = await axios.post( "http://localhost:3001/checkTracks", {
+    idList: trackId,
+  } );
+  return data.data;
+};
+
+export const removeFromMySavedTracks = async ( trackId ) => {
+  const data = await axios.post(
+    "http://localhost:3001/removeFromMySavedTracks",
+    {
+      id: trackId,
+    }
+  );
+  console.log( data );
+};
