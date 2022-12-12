@@ -29,17 +29,17 @@ export const getPlaylistData = async ( playlistId ) => {
   return data.data;
 };
 
-export const getPlaylistTracks = async ( playlistId ) => {
+export const getPlaylistTracks = async ( playlistId, offset ) => {
   const data = await axios.post( "http://localhost:3001/getPlaylistTracks", {
     playlistId,
-    offset: 0,
+    offset,
   } );
   return data.data.tracks;
 };
 //savedSongs
-export const getSavedSongs = async () => {
+export const getSavedSongs = async ( offset ) => {
   const datas = await axios.post( "http://localhost:3001/savedTracks", {
-    offset: 0,
+    offset,
   } );
 
   return datas.data;
