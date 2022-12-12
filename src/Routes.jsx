@@ -3,7 +3,14 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 
 import { BasePage } from "./components";
-import { Home, Search, Playlist, Login, Error } from "./pages";
+import {
+	Home,
+	Search,
+	Login,
+	Error,
+	PlaylistHome,
+	PlaylistDetail,
+} from "./pages";
 import { getMyData } from "./api";
 import { UserContext } from "./context/UserContext";
 
@@ -31,8 +38,8 @@ const RoutesList = () => {
 				</Route>
 
 				<Route path='playlist'>
-					<Route path='' element={<Playlist />} />
-					<Route path=':id' element={<Playlist />} />
+					<Route path='' element={<PlaylistHome />} />
+					<Route path=':id' element={<PlaylistDetail />} />
 				</Route>
 				<Route path='*' element={<Error />} />
 			</Routes>

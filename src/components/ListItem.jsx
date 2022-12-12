@@ -25,7 +25,7 @@ const ListItem = ({
 		<div className='grid items-center justify-center grid-cols-12 hover:rounded-lg bg-gray hover:bg-offwhite/20 hover:text-gold hover:cursor-pointer'>
 			{/* listItemLeft */}
 			<div className='flex items-center justify-around'>
-				<p className='mx-4'>{index}</p>
+				<div className='mx-4'>{index}</div>
 				<img
 					src={img}
 					alt='artist'
@@ -34,7 +34,7 @@ const ListItem = ({
 				/>
 			</div>
 			<div className='col-span-4 mx-4 text-ellipsis whitespace-nowrap overflow-hidden w-[300px]'>
-				<p>{songName}</p>
+				<div>{songName}</div>
 				<small>{artistName}</small>
 			</div>
 
@@ -43,10 +43,10 @@ const ListItem = ({
 			<p className='col-span-3'>{albumName}</p>
 			<p className='text-center'>{releasedDate}</p>
 			<p className='text-center'>{dura(duration)}</p>
-			<p className='text-center'>...</p>
-			<p className='text-center'>
+			<p className='text-center'></p>
+			<div className='text-center'>
 				<DropDown songURI={songURI} />
-			</p>
+			</div>
 		</div>
 	);
 };

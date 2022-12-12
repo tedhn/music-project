@@ -5,7 +5,7 @@ import { getPlaylistData, getPlaylistTracks } from "@/api";
 import { ListItem } from "@/components";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const Playlist = () => {
+const PlaylistDetail = () => {
 	const param = useParams();
 
 	const [isLoading, setIsLoading] = useState(true);
@@ -76,7 +76,7 @@ const Playlist = () => {
 							className='mt-4 p-6'>
 							{tracks.map((data, index) => (
 								<ListItem
-									key={data.id}
+									key={data.track.id}
 									index={index + 1}
 									songName={data.track.name}
 									artistName={data.track.artists[0].name}
@@ -94,4 +94,4 @@ const Playlist = () => {
 		</>
 	);
 };
-export default Playlist;
+export default PlaylistDetail;

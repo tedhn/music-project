@@ -1,20 +1,20 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 import { ListItem } from "@/components";
 import { getSavedSongs } from "@/api";
-import InfiniteScroll from "react-infinite-scroll-component";
 
 const Home = () => {
 	const [songs, setSongs] = useState([]);
 	const [total, setTotal] = useState(0);
+
 	useEffect(() => {
 		fetchSongs();
 	}, []);
 
 	const fetchSongs = async () => {
 		getSavedSongs(songs.length).then((res) => {
-			console.log(res);
 			setTotal(res.total);
 			setSongs([...songs, ...res.items]);
 		});
@@ -23,12 +23,6 @@ const Home = () => {
 	return (
 		<div className='w-full'>
 			<h1 className='text-6xl font-bold p-4'>My Libaray</h1>
-			{/* <div className="flex flex-row items-center w-11/12 h-16 gap-64 px-8 py-8 ml-8 text-white bg-gray">
-        <p># Title</p>
-        <p>Album Name </p>
-        <p>Date Added </p>
-        <p>Duration </p>
-      </div> */}
 
 			<InfiniteScroll
 				dataLength={songs.length}
@@ -38,7 +32,7 @@ const Home = () => {
 				className='mt-4 p-6'>
 				{songs.map((song, index) => (
 					<ListItem
-						key={song.id}
+						key={song.track.id}
 						index={index + 1}
 						songName={song.track.name}
 						artistName={song.track.artists[0].name}

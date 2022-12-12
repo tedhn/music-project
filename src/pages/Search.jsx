@@ -55,7 +55,7 @@ const Search = () => {
 
 			<h3 className='my-5 text-3xl font-semibold'>Albums</h3>
 
-			<div className='flex flex-wrap justify-center w-full gap-4 px-12 md:justify-start custom-scrollbars__content h-2/5'>
+			<div className='flex flex-wrap justify-center w-full gap-4 px-12 md:justify-start custom-scrollbars__content'>
 				{playlists.map((playlist) => (
 					<Card
 						key={playlist.id}

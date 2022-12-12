@@ -1,7 +1,8 @@
 import Home from "./Home";
 import Search from "./Search";
-import Playlist from "./Playlist";
+import PlaylistDetail from "./PlaylistDetail";
+import PlaylistHome from "./PlaylistHome";
 import Login from './Login'
 import Error from './ErrorPage'
 
-export { Home, Search, Playlist, Login, Error };
+export { Home, Search, PlaylistHome, PlaylistDetail, Login, Error };
