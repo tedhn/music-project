@@ -10,7 +10,7 @@ const Login = ({ setAuthorized }) => {
 		VITE_REDIRECT_URI,
 		VITE_RESPONSE_TYPE,
 		VITE_SCOPE,
-	} = process.env;
+	} = import.meta.env;
 
 	const AUTH_LINK = `${VITE_AUTH_ENDPOINT}?client_id=${VITE_CLIENT_ID}&redirect_uri=${VITE_REDIRECT_URI}&response_type=${VITE_RESPONSE_TYPE}&scope=${VITE_SCOPE}`;
 
