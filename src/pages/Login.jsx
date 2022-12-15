@@ -13,7 +13,7 @@ const Login = ({ setAuthorized }) => {
 	// } = import.meta.env;
 
 	const VITE_AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
-	const VITE_REDIRECT_URI = "https://symphonious-cocada-86f353.netlify.app/";
+	const VITE_REDIRECT_URI = "https://symphonious-cocada-86f353.netlify.app";
 	const VITE_RESPONSE_TYPE = "code";
 	const VITE_CLIENT_ID = "fffed6f6f8e0455cb1d56dfeca1f47cd";
 	const VITE_SECRET_ID = "6a8cec9a3f104cadbd66774d095aab02";
