@@ -12,7 +12,7 @@ const App = () => {
 	const [isShowModal, setShowModal] = useState(false);
 
 	return (
-		<div className='grid grid-cols-12 h-screen '>
+		<div className='grid grid-cols-12  h-full '>
 			{authorized ? (
 				<>
 					{isShowModal && <Modal setShowModal={setShowModal} />}

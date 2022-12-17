@@ -21,7 +21,7 @@ const Navbar = ({ setShowModal }) => {
 
 	return (
 		<div className='sticky top-0 col-span-2 h-screen  bg-dark '>
-			<div className='flex flex-col items-center w-full h-full gap-4  pt-6 md:gap-10 sm:gap-8'>
+			<div className='flex flex-col items-center w-full h-full gap-4 p-4 pt-6 md:gap-10 sm:gap-8'>
 				<div className='flex flex-col w-4/5 gap-2 '>
 					<Link
 						to='/'

@@ -19,7 +19,7 @@ const Modal = ({ setShowModal }) => {
 
 	return (
 		<div className='absolute top-0 left-0 z-10 w-full h-full'>
-			<div className='fixed top-0 left-0 w-full h-full bg-dark/80'>
+			<div className='fixed top-0 left-0 w-full h-full bg-black/80'>
 				<div className='relative flex flex-col items-center justify-around w-1/2 gap-8 p-4 -translate-x-1/2 -translate-y-1/2 rounded-md bg-dark top-1/2 left-1/2'>
 					<div className='text-4xl font-bold'>Create a playlist</div>
 					<div className='flex items-center gap-4'>
