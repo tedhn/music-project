@@ -61,9 +61,7 @@ export const createPlaylist = async ( playlistName, otherDeatils ) => {
 }
 
 export const addToPlaylist = async ( playlistId, songId ) => {
-  axios.post( `${ url }addToPlaylist`, { playlistId, song: songId } )
-
-
+  const { data } = await axios.post( `${ url }addToPlaylist`, { playlistId, song: songId } )
 
   return data.body;
 };

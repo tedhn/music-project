@@ -4,6 +4,6 @@ import ListItem from "./ListItem";
 import BasePage from "./BasePage";
 import Card from './Card'
 import Modal from './Modal'
-import DropDown from "./DropDown";
+import DropDown from "./Dropdown/DropDown";
 
 export { Player, Navbar, ListItem, BasePage, Card, Modal, DropDown };

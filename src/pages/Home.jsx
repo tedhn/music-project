@@ -22,7 +22,7 @@ const Home = () => {
 
 	return (
 		<div className='w-full'>
-			<h1 className='text-6xl font-bold p-4'>My Libaray</h1>
+			<h1 className='text-6xl font-bold p-4'>My Library</h1>
 
 			<InfiniteScroll
 				dataLength={songs.length}

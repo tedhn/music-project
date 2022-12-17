@@ -43,7 +43,7 @@ const ListItem = ({
 
 	return (
 		// listSection
-		<div className='grid items-center justify-center grid-cols-12 hover:rounded-lg bg-gray hover:bg-offwhite/20 hover:text-gold hover:cursor-pointer'>
+		<div className='grid items-center justify-center grid-cols-12 hover:rounded-lg bg-gray hover:bg-offwhite/20 hover:cursor-pointer'>
 			{/* listItemLeft */}
 			<div className='flex items-center justify-around'>
 				<p className='mx-4'>{index}</p>
@@ -69,7 +69,7 @@ const ListItem = ({
 					<AiOutlineHeart color={"#FFD369"} />
 				)}
 			</p>{" "}
-			<div className='text-center'>
+			<div className='flex flex-col items-center justify-center'>
 				<DropDown songURI={songURI} />
 			</div>
 		</div>
