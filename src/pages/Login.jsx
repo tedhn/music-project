@@ -38,7 +38,7 @@ const Login = ({ setAuthorized }) => {
 			<img src={logo} alt='Spotify-Logo' />
 			<a
 				href={AUTH_LINK}
-				className='py-3 text-lg font-medium rounded-full cursor-pointer px-9 bg-gold text-dark'>
+				className='py-3 mt-4 text-lg font-medium rounded-full cursor-pointer px-9 bg-gold text-dark'>
 				LOGIN
 			</a>
 		</div>

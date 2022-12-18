@@ -29,7 +29,7 @@ const Home = () => {
 				next={fetchSongs}
 				hasMore={songs.length < total}
 				loader={<h4>Loading...</h4>}
-				className='mt-4 p-6'>
+				className='mt-4'>
 				{songs.map((song, index) => (
 					<ListItem
 						key={song.track.id}

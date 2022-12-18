@@ -18,7 +18,7 @@ const PlaylistHome = () => {
 						onClick={() => navigate(`${playlist.id}`)}>
 						<Card
 							key={playlist.id}
-							img={playlist.images[0].url}
+							img={playlist.images[0]?.url}
 							name={playlist.name}
 							ownerName={playlist.owner.display_name}
 						/>
